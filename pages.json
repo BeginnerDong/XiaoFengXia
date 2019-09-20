@@ -1,0 +1,445 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "小蜂侠",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/fengxiangba/fengxiangba",
+			"style": {
+				"navigationBarTitleText": "蜂享吧",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/fengxiangba_fabu/fengxiangba_fabu",
+			"style": {
+				"navigationBarTitleText": "发布帖子",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/jifenShop/jifenShop",
+			"style": {
+				"navigationBarTitleText": "积分商城",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/simpleDetail/simpleDetail",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/newPeople/newPeople",
+			"style": {
+				"navigationBarTitleText": "新人区",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/newPeople_classify/newPeople_classify",
+			"style": {
+				"navigationBarTitleText": "鲜果",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/goodsJoinDetail/goodsJoinDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/goodsOpenDetail/goodsOpenDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/goodsOpenDetailTwo/goodsOpenDetailTwo",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/goodsDetail_pintuan/goodsDetail_pintuan",
+			"style": {
+				"navigationBarTitleText": "拼团",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/confirmOrder/confirmOrder",
+			"style": {
+				"navigationBarTitleText": "确认订单",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myAddress/myAddress",
+			"style": {
+				"navigationBarTitleText": "我的地址",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myAddressAdd/myAddressAdd",
+			"style": {
+				"navigationBarTitleText": "添加地址",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/routine/routine",
+			"style": {
+				"navigationBarTitleText": "常规团",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/routine_classify/routine_classify",
+			"style": {
+				"navigationBarTitleText": "海鲜",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/routine_openDetailDetail/routine_openDetailDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myShopApply/myShopApply",
+			"style": {
+				"navigationBarTitleText": "蜂客申请",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myShopApply_pay/myShopApply_pay",
+			"style": {
+				"navigationBarTitleText": "支付",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myShop/myShop",
+			"style": {
+				"navigationBarTitleText": "我的店铺",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myShopPayDetail/myShopPayDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myShopPoster/myShopPoster",
+			"style": {
+				"navigationBarTitleText": "海报",
+				"onReachBottomDistance":100,
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/coupon/coupon",
+			"style": {
+				"navigationBarTitleText": "优惠券",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/coupon_rule/coupon_rule",
+			"style": {
+				"navigationBarTitleText": "兑换规则",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/activityDetail/activityDetail",
+			"style": {
+				"navigationBarTitleText": "活动详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/activityJoin/activityJoin",
+			"style": {
+				"navigationBarTitleText": "参加",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/fengxiangba_pl/fengxiangba_pl",
+			"style": {
+				"navigationBarTitleText": "评论",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/fengxiangba_plDetail/fengxiangba_plDetail",
+			"style": {
+				"navigationBarTitleText": "评论",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/jiFenShopDetail/jiFenShopDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/confirmOrderTwo/confirmOrderTwo",
+			"style": {
+				"navigationBarTitleText": "确认订单",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myZiTiAddress/myZiTiAddress",
+			"style": {
+				"navigationBarTitleText": "自提点",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game/game",
+			"style": {
+				"navigationBarTitleText": "游戏",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_bargain/game_bargain",
+			"style": {
+				"navigationBarTitleText": "砍价",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_bargainDetail/game_bargainDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_bargainDetailTwo/game_bargainDetailTwo",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_bargainDetailTwo_friends/game_bargainDetailTwo_friends",
+			"style": {
+				"navigationBarTitleText": "好友砍价",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_turntable/game_turntable",
+			"style": {
+				"navigationBarTitleText": "游戏",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_turntable_rule/game_turntable_rule",
+			"style": {
+				"navigationBarTitleText": "活动规则",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/game_turntable_winRecord/game_turntable_winRecord",
+			"style": {
+				"navigationBarTitleText": "中奖纪录",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user_perInfor/user_perInfor",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myOrder/myOrder",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myOrder_hexiao/myOrder_hexiao",
+			"style": {
+				"navigationBarTitleText": "核销码",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myCoupon/myCoupon",
+			"style": {
+				"navigationBarTitleText": "我的优惠券",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myIntegral/myIntegral",
+			"style": {
+				"navigationBarTitleText": "我的积分",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myYongJin/myYongJin",
+			"style": {
+				"navigationBarTitleText": "我的佣金",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myCashOut/myCashOut",
+			"style": {
+				"navigationBarTitleText": "提现",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myBankMsg/myBankMsg",
+			"style": {
+				"navigationBarTitleText": "添加银行卡",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myCommunityCenter/myCommunityCenter",
+			"style": {
+				"navigationBarTitleText": "社区中心",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_login/honeycomb_login",
+			"style": {
+				"navigationBarTitleText": "蜂窝登录",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_register/honeycomb_register",
+			"style": {
+				"navigationBarTitleText": "蜂窝注册",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_center/honeycomb_center",
+			"style": {
+				"navigationBarTitleText": "蜂窝中心",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_scan/honeycomb_scan",
+			"style": {
+				"navigationBarTitleText": "扫一扫",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_shopMsg/honeycomb_shopMsg",
+			"style": {
+				"navigationBarTitleText": "门店信息",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/honeycomb_writeOff/honeycomb_writeOff",
+			"style": {
+				"navigationBarTitleText": "核销订单",
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/myBeeman_register/myBeeman_register",
+			"style": {
+				"navigationBarTitleText": "蜂客注册",
+				"onReachBottomDistance":100
+			}
+		}
+		
+    ],
+	
+	"globalStyle": {
+		//"navigationStyle":"custom",
+		"navigationBarTextStyle": "black",//导航栏文字蓝色
+		"navigationBarTitleText": "小蜂侠",
+		"navigationBarBackgroundColor": "#f3d012"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	},
+	"tabBar":{
+		"color":"#999",
+		"selectedColor":"#222",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+			   "pagePath": "pages/index/index",
+			   "text": "小蜂侠",
+			   "iconPath": "static/images/nabar1.png",
+			   "selectedIconPath": "static/images/nabar1-a.png"
+			},
+			{
+			  "pagePath": "pages/fengxiangba/fengxiangba",
+			  "text": "蜂享吧",
+			  "iconPath": "static/images/nabar2.png",
+			  "selectedIconPath": "static/images/nabar2-a.png"
+			},
+			{
+			  "pagePath": "pages/jifenShop/jifenShop",
+			  "text": "积分商城",
+			  "iconPath": "static/images/nabar3.png",
+			  "selectedIconPath": "static/images/nabar3-a.png"
+			},
+			{
+			  "pagePath": "pages/user/user",
+			  "text": "我的",
+			  "iconPath": "static/images/nabar4.png",
+			  "selectedIconPath": "static/images/nabar4-a.png"
+			}
+			
+		]
+	}
+}
