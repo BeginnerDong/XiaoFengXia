@@ -154,7 +154,7 @@ top:30rpx;left: 20rpx;}
 .myComunityCt .interct_idexLis{background: none;}
 .myComunityCt .interct_idexLis .child{padding: 30rpx 4% 20rpx 4%;border-bottom: 0; margin-bottom: 30rpx;background: #fff;border-radius: 10rpx;}
 .myComunityCt .interct_idexLis .child .title{padding-top: 0;}
-.interct_idexLis .imgbox .lisThree{width: 196rpx; height: 196rpx;}
+.myComunityCt .interct_idexLis .imgbox .lisThree{width: 196rpx; height: 196rpx;}
 .interct_idexLis .shTime{margin-bottom: 26rpx;}
 
 .myComunityCt .myRowBetween .item{border-bottom: 0; margin-bottom: 30rpx;}

@@ -91,18 +91,7 @@
 				</view>
 				<view class="yy-title" style="padding: 10px 0;">规格</view>
 				<view class="yyDate-lis flexRowBetween" style="flex-wrap: wrap; justify-content: flex-start;">
-					<view class="on">10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
-					<view>10斤装</view>
+					<view v-for="(item,index) in seltSpecsList" :key="index" :class="[selCurrent == index? 'on':'']" @click="seltSpecs(index)">{{item}}</view>
 				</view>
 				<view class="flexRowBetween" style="padding: 30rpx 0; border-top: 2rpx solid #e7e7e7; border-bottom: 2rpx solid #e7e7e7; margin-top: 10rpx;">
 					<view class="yy-title">购买数量</view>
@@ -129,7 +118,9 @@
 				webSelf: this,
 				showView: false,
 				is_show:false,
-				show_addok:false
+				show_addok:false,
+				selCurrent:0,
+				seltSpecsList:['10斤装','10斤装','10斤装','10斤装','10斤装']
 			}
 		},
 		
@@ -145,6 +136,11 @@
 			prev(){
 				const self = this;
 				self.$router.go(-1)
+			},
+			// 商品属性
+			seltSpecs(index){
+				const self = this;
+				self .selCurrent=index
 			},
 			getMainData() {
 				const self = this;
