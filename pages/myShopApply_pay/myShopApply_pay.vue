@@ -2,45 +2,19 @@
 	<view class="">
 		
 		<view class="shopPay">
-			<view class="item boxShaow" @click="choose('1')">
+			<view class="item boxShaow" @click="choose(index)" v-for="(item,index) in choosePay" :key="index">
 				<view class="icon">
-					<image src="../../static/images/pay-icon1.png" mode=""></image>
+					<image :src="item.iconUrl" mode=""></image>
 				</view>
-				<view class="money">v3<text class="price">56</text></view>
+				<view class="money">{{item.level}}<text class="price">{{item.price}}</text></view>
 				<view class="choose">
-					<image :src="index==1?'../../static/images/pay-icon5.png':'../../static/images/pay-icon6.png'" mode=""></image>
+					<image :src="curr==index?'../../static/images/pay-icon5.png':'../../static/images/pay-icon6.png'" mode=""></image>
 				</view>
 			</view>
-			<view class="item boxShaow"  @click="choose('2')">
-				<view class="icon">
-					<image src="../../static/images/pay-icon3.png" mode=""></image>
-				</view>
-				<view class="money">v4<text class="price">66</text></view>
-				<view class="choose">
-					<image :src="index==2?'../../static/images/pay-icon5.png':'../../static/images/pay-icon6.png'" mode=""></image>
-				</view>
-			</view>
-			<view class="item boxShaow" @click="choose('3')">
-				<view class="icon">
-					<image src="../../static/images/pay-icon2.png" mode=""></image>
-				</view>
-				<view class="money">v5<text class="price">76</text></view>
-				<view class="choose">
-					<image :src="index==3?'../../static/images/pay-icon5.png':'../../static/images/pay-icon6.png'" mode=""></image>
-				</view>
-			</view>
-			<view class="item boxShaow" @click="choose('4')">
-				<view class="icon">
-					<image src="../../static/images/pay-icon4.png" mode=""></image>
-				</view>
-				<view class="money">v6<text class="price">88</text></view>
-				<view class="choose">
-					<image :src="index==4?'../../static/images/pay-icon5.png':'../../static/images/pay-icon6.png'" mode=""></image>
-				</view>
-			</view>
+			
 		</view>
 		<view class="submitbtn" style="margin-top: 160rpx;">
-			<button class="hei" type="submit" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myShop/myShop'}})">支付</button>
+			<button class="hei" type="submit" @click="Router.navigateTo({route:{path:'/pages/myShop/myShop'}})">支付</button>
 		</view>
 	</view>
 </template>
@@ -49,11 +23,33 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},
-				index:1
+				curr:1,
+				choosePay:[
+					{
+						iconUrl:'../../static/images/pay-icon1.png',
+						level:'V3',
+						price:'56'
+					},
+					{
+						iconUrl:'../../static/images/pay-icon2.png',
+						level:'V4',
+						price:'66'
+					},
+					{
+						iconUrl:'../../static/images/pay-icon3.png',
+						level:'V5',
+						price:'76'
+					},
+					{
+						iconUrl:'../../static/images/pay-icon4.png',
+						level:'V6',
+						price:'77'
+					}
+				]
 			}
 		},
 		onLoad() {
@@ -63,9 +59,7 @@
 		methods: {
 			choose(index){
 				const self = this;
-				if(index!=self.index){
-					self.index = index
-				}
+				self.curr = index
 			},
 			getMainData() {
 				const self = this;

@@ -83,7 +83,7 @@
 				</view>
 			</view>
 			
-			<view class="child"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/interactiveDetail/interactiveDetail'}})">
+			<view class="child"  @click="Router.navigateTo({route:{path:'/pages/interactiveDetail/interactiveDetail'}})">
 				<view class="flexRowBetween">
 					<view class="flex ">
 						<view class="photo"><image src="../../static/images/beestoenjoy-img1.png" mode=""></image></view>
@@ -144,7 +144,7 @@
 					</view>
 				</view>
 				<view class="pltex_label">
-					<view class="lis" @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_plDetail/fengxiangba_plDetail'}})">
+					<view class="lis" @click="Router.navigateTo({route:{path:'/pages/fengxiangba_plDetail/fengxiangba_plDetail'}})">
 						<image src="../../static/images/beestoenjoy-icon4.png" mode=""></image>
 						<view>1233</view>
 					</view>
@@ -168,7 +168,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				wx_info:{},
 				fxPlunCont:[

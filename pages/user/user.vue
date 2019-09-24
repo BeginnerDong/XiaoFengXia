@@ -1,7 +1,7 @@
 <template>
 	<view>
 
-		<view class="userHead flexRowBetween"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/user_perInfor/user_perInfor'}})">
+		<view class="userHead flexRowBetween"  @click="Router.navigateTo({route:{path:'/pages/user_perInfor/user_perInfor'}})">
 			<view class="left flex">
 				<view class="photo">
 					<image src="../../static/images/about-img1.png" mode=""></image>
@@ -18,42 +18,42 @@
 		
 		<view class="f5H10"></view>
 		<view class="XlineNav">
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myOrder/myOrder'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myOrder/myOrder'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon1.png"></image>
 				</view>
 				<view class="ilblock">我的订单</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myIntegral/myIntegral'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myIntegral/myIntegral'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon2.png"></image>
 				</view>
 				<view class="ilblock">我的积分</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myCoupon/myCoupon'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myCoupon/myCoupon'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon3.png"></image>
 				</view>
 				<view class="ilblock">我的优惠券</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myYongJin/myYongJin'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myYongJin/myYongJin'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon4.png"></image>
 				</view>
 				<view class="ilblock">我的佣金</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon5.png"></image>
 				</view>
 				<view class="ilblock">我的地址</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myCommunityCenter/myCommunityCenter'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myCommunityCenter/myCommunityCenter'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon6.png"></image>
 				</view>
@@ -62,14 +62,14 @@
 			</view>
 			
 			<view class="f5H10"></view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_login/honeycomb_login'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/honeycomb_login/honeycomb_login'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon7.png"></image>
 				</view>
 				<view class="ilblock">蜂窝中心</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myBeeman_register/myBeeman_register'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myBeeman_register/myBeeman_register'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/about-icon8.png"></image>
 				</view>
@@ -96,7 +96,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{}

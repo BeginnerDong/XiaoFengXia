@@ -3,7 +3,7 @@
 		<view class="index_topBj pdlr4">
 			<view class="banner-box" style="padding-top: 30rpx 0;">
 				<view class="banner radius10 oh">
-					<swiper class="swiper-box" indicator-dots="indicatorDots" autoplay="autoplay" interval="interval" duration="duration" indicator-active-color="#434343">
+					<swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-active-color="#434343">
 						<block v-for="(item,index) in labelData" :key="index">
 							<swiper-item class="swiper-item">
 								<image :src="item" class="slide-image" />
@@ -17,11 +17,11 @@
 		<view class="f5H10"></view>
 		<view class="ind_cont5">
 			<view class="flexRowBetween">
-				<view class="item" @click="webSelf.$Router.navigateTo({route:{path:'/pages/coupon/coupon'}})">
+				<view class="item" @click="Router.navigateTo({route:{path:'/pages/coupon/coupon'}})">
 					<image src="../../static/images/mall-icon1.png" mode=""></image>
 					<view class="tit">优惠券</view>
 				</view>
-				<view class="item"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/game/game'}})">
+				<view class="item"  @click="Router.navigateTo({route:{path:'/pages/game/game'}})">
 					<image src="../../static/images/mall-icon2.png" mode=""></image>
 					<view class="tit">游戏</view>
 				</view>
@@ -33,7 +33,7 @@
 			<view class="tt">精选推荐</view>
 		</view>
 		<view class="proLis flexRowBetween">
-			<view class="item-lis" v-for="(item,index) in produtList" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/jiFenShopDetail/jiFenShopDetail'}})">
+			<view class="item-lis" v-for="(item,index) in produtList" :key="index" @click="Router.navigateTo({route:{path:'/pages/jiFenShopDetail/jiFenShopDetail'}})">
 				<image class="img" src="../../static/images/beestoenjoy.png" alt="" />
 				<view class="tit avoidOverflow">名称名称名称名称名称</view>
 				<view class="price">23.6<text>/积分:233</text></view>
@@ -48,7 +48,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

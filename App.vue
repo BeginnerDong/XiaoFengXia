@@ -30,5 +30,5 @@
 	}
 	
 	/* 效果图详情页轮播 */
-	.sketchXq uni-swiper .uni-swiper-dots-horizontal{bottom: auto;top: 760rpx;}
+	/* .sketchXq uni-swiper .uni-swiper-dots-horizontal{bottom: auto;top: 760rpx;} */
 </style>

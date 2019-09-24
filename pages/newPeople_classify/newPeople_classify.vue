@@ -3,7 +3,7 @@
 		
 		<view class="pdlr4">
 			<view class="ind_proList">
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/routine_openDetailDetail/routine_openDetailDetail'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index"  @click="Router.navigateTo({route:{path:'/pages/routine_openDetailDetail/routine_openDetailDetail'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -34,7 +34,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

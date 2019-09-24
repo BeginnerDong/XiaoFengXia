@@ -39,7 +39,7 @@
 		
 		
 		<view class="submitbtn" style="margin-top: 200rpx;">
-			<button class="hei" type="submit" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myShopApply_pay/myShopApply_pay'}})">确定</button>
+			<button class="hei" type="submit" @click="Router.navigateTo({route:{path:'/pages/myShopApply_pay/myShopApply_pay'}})">确定</button>
 		</view>
 	</view>
 </template>
@@ -48,7 +48,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{}

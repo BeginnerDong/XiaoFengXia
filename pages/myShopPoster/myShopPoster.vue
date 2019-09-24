@@ -15,7 +15,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 			}
 		},
@@ -33,7 +33,6 @@
 				console.log('852369')
 				const postData = {};
 				postData.tokenFuncName = 'getProjectToken';
-
 				self.$apis.orderGet(postData, callback);
 			},
 		},

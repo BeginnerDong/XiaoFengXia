@@ -2,7 +2,7 @@
 	<view>
 		
 		<view class="myRowBetween" >
-			<view class="item flexRowBetween" v-for="(item,index) in rewardData"  @click="onTabsItemTap">
+			<view class="item flexRowBetween" v-for="(item,index) in rewardData"  @click="setCurr(index)" :key="index">
 				<view class="left">
 					<view class="flex">
 						<view>中华世纪智能柜机</view>
@@ -11,7 +11,7 @@
 					<view class="time">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
 				</view>
 				<view class="right">
-					<image class="setIcon" :src="curr==index?'../../static/images/address-icon3.png':'../../static/images/address-icon4.png'" mode="" ></image>
+					<image class="setIcon" :src="curr==index?'../../static/images/address-icon3.png':'../../static/images/address-icon4.png'" mode=""></image>
 				</view>
 			</view>
 		</view>
@@ -23,7 +23,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},
@@ -38,7 +38,10 @@
 			//self.$Utils.loadAll(['getMainData'], self);
 		},
 		methods: {
-		
+			setCurr(index){
+				const self = this;
+				self.curr = index
+			},
 			getMainData() {
 				const self = this;
 				console.log('852369')

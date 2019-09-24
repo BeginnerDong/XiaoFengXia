@@ -47,7 +47,7 @@
 						<view class="name" >张丹&nbsp;&nbsp;&nbsp;&nbsp;15689795620</view>
 						<view class="" >陕西省西安市雁塔区高新大都荟</view>
 					</view>
-					<view class="arrow"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">
+					<view class="arrow"  @click="Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">
 						<image class=" arrowR" src="../../static/images/home-icon3.png" alt=""/>
 					</view>
 				</view>
@@ -61,7 +61,7 @@
 		
 		<view class="confm_BFix">
 			合计： <view class="price">56.00</view>
-			<view class="btn" @click="webSelf.$Utils.stopMultiClick(submit)">立即购买</view>
+			<view class="btn" >立即购买</view>
 		</view>
 	</view>
 
@@ -71,7 +71,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				count:1,
 				num:1,
 				proListDate:[

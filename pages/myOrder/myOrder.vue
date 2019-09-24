@@ -40,7 +40,7 @@
 						</view>
 					</view>
 					<view class="bBtn">
-						<view class="btn"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myOrder_hexiao/myOrder_hexiao'}})">待核销</view>
+						<view class="btn"  @click="Router.navigateTo({route:{path:'/pages/myOrder_hexiao/myOrder_hexiao'}})">待核销</view>
 					</view>
 				</view>
 				<view class="prolis boxShaow">
@@ -132,7 +132,7 @@
 							</view>
 						</view>
 						<view class="bBtn">
-							<view class="btn"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myOrder_hexiao/myOrder_hexiao'}})">确认收货</view>
+							<view class="btn"  @click="Router.navigateTo({route:{path:'/pages/myOrder_hexiao/myOrder_hexiao'}})">确认收货</view>
 						</view>
 					</view>
 				</view>
@@ -173,7 +173,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score: '',
 				wx_info: {},

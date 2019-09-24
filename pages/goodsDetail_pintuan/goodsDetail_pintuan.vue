@@ -35,7 +35,7 @@
 					</view>
 				</view>
 				<view class="submitbtn">
-					<button type="button" style="width: 100%; margin:20rpx 0;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">去拼单</button>
+					<button type="button" style="width: 100%; margin:20rpx 0;" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">去拼单</button>
 				</view>
 			</view>
 		</view>
@@ -48,7 +48,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				pintuanList:[

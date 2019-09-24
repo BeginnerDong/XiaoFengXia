@@ -4,7 +4,7 @@
 			<image src="../../static/images/activity-img1.png" mode=""></image>
 		</view>
 		
-		<view class="fabubtn" @click="webSelf.$Router.navigateTo({route:{path:'/pages/activityJoin/activityJoin'}})">
+		<view class="fabubtn" @click="Router.navigateTo({route:{path:'/pages/activityJoin/activityJoin'}})">
 			<view class="icon">
 				<image src="../../static/images/activity-icon1.png" mode=""></image>
 			</view>
@@ -35,8 +35,8 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
 				showView: false,
+				Router:this.$Router,
 				score:'',
 				wx_info:{},
 				is_show:false,

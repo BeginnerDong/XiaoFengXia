@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="posterBtn"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myShopPoster/myShopPoster'}})">分享海报</view>
+		<view class="posterBtn"  @click="Router.navigateTo({route:{path:'/pages/myShopPoster/myShopPoster'}})">分享海报</view>
 		<view class="detailxqBan">
 			<image src="../../static/images/details-img1.png" mode=""></image>
 		</view>
@@ -101,7 +101,7 @@
 					</view>
 				</view>
 				<view class="submitbtn" style="margin-top: 60rpx;">
-					<button class="hei" style="margin-bottom: 0;" type="submit" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})" >确定</button>
+					<button class="hei" style="margin-bottom: 0;" type="submit" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})" >确定</button>
 				</view>
 			</view>
 		</view>
@@ -114,7 +114,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				show_addok:false,

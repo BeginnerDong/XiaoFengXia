@@ -1,7 +1,7 @@
 <template>  
     <view class=" pdlr4">  
 
-		<view class="tit" style=""  @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_turntable_rule/game_turntable_rule'}})">
+		<view class="tit" style=""  @click="Router.navigateTo({route:{path:'/pages/game_turntable_rule/game_turntable_rule'}})">
 			<view class="name">活动规则</view>
 		</view> 
 
@@ -30,7 +30,7 @@
 			<button class="hei" type="button">你还有{{chishu}}次机会</button>
 		</view>
 		<view class="submitbtn" style="margin-top: 50rpx;">
-			<button type="button"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_turntable_winRecord/game_turntable_winRecord'}})">中奖纪录</button>
+			<button type="button"  @click="Router.navigateTo({route:{path:'/pages/game_turntable_winRecord/game_turntable_winRecord'}})">中奖纪录</button>
 		</view>
 		
     </view>  
@@ -39,7 +39,7 @@
     export default {  
 		data() {  
 			return {  
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				awardsConfig:{  
 								chance: true,  

@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<view class="game_indexList pdlr4">
-			<view class="item radius10" style="background: #f84a49;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_turntable/game_turntable'}})">
+			<view class="item radius10" style="background: #f84a49;" @click="Router.navigateTo({route:{path:'/pages/game_turntable/game_turntable'}})">
 				<image src="../../static/images/youxizhongxin-img1.png" mode=""></image>
 			</view>
-			<view class="item radius10" style="background: #9838d0;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_bargain/game_bargain'}})">
+			<view class="item radius10" style="background: #9838d0;" @click="Router.navigateTo({route:{path:'/pages/game_bargain/game_bargain'}})">
 				<image src="../../static/images/youxizhongxin-img2.png" mode=""></image>
 			</view>
 		</view>
@@ -16,8 +16,8 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
-				showView: false
+				showView: false,
+				Router:this.$Router,
 			}
 		},
 		

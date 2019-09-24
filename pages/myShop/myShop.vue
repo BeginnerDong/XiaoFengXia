@@ -3,9 +3,9 @@
 		<view class="index_topBj">
 			<view class="banner-box">
 				<view class="banner radius10 oh">
-					<swiper class="swiper-box" indicator-dots="indicatorDots" autoplay="autoplay" interval="interval" duration="duration" indicator-active-color="#434343">
+					<swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-active-color="#434343">
 						<block v-for="(item,index) in labelData" :key="index">
-							<swiper-item class="swiper-item" @click="webSelf.$Router.navigateTo({route:{path:'/pages/simpleDetail/simpleDetail'}})">
+							<swiper-item class="swiper-item" @click="Router.navigateTo({route:{path:'/pages/simpleDetail/simpleDetail'}})">
 								<image :src="item" class="slide-image" />
 							</swiper-item>
 						</block>
@@ -17,13 +17,13 @@
 		<view class="f5H10"></view>
 		
 		<view class="orderNav">
-			<view class="tt" :class="current==1?'on':''" @click="change('1')">尝鲜区</view>
+			<view class="tt" :class="current==1?'on':''" @click="change('1')">尝鲜区1</view>
 			<view class="tt" :class="current==2?'on':''" @click="change('2')">全部商品</view>
 		</view>
 		<view class="pdlr4">
 			
 			<view class="ind_proList" v-if="current==1">
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myShopPayDetail/myShopPayDetail'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="Router.navigateTo({route:{path:'/pages/myShopPayDetail/myShopPayDetail'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -45,7 +45,7 @@
 			</view>
 			
 			<view class="ind_proList" v-if="current==2">
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -77,7 +77,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

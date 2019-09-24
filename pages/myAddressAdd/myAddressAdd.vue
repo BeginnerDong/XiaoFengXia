@@ -9,7 +9,7 @@
 			</view>	
 			<view class="eidt-line">
 				<view class="ll">手机号码</view>
-				<view class="rr" >
+				<view class="rr">
 					<input style="text-align: right;" type="number" placeholder="+86>">
 				</view>
 			</view>	
@@ -28,13 +28,13 @@
 			<view class="eidt-line">
 				<view class="ll" style="width: 50%;">设为默认地址</view>
 				<view class="rr" style="width:50%;text-align: right" @click="setDefault">
-					<img v-if="!is_show" class="mmIcon" src="../../static/images/address-icon03.png" alt="">
-					<img v-if="is_show" class="mmIcon" src="../../static/images/address-icon02.png" alt="">
+					<image v-if="!is_show" class="mmIcon" src="../../static/images/address-icon03.png" alt=""/>
+					<image v-if="is_show" class="mmIcon" src="../../static/images/address-icon02.png" alt=""/>
 				</view>
 			</view>	
 			
 			<view class="submitbtn"  style="margin-top: 200rpx;">
-				<button class="hei" type="button"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">保存</button>
+				<button class="hei" type="button"  @click="Router.navigateTo({route:{path:'/pages/myAddress/myAddress'}})">保存</button>
 			</view>
 		</view>
 	</view>
@@ -44,7 +44,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				score: '',

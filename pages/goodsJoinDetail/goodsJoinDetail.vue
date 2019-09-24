@@ -20,7 +20,7 @@
 		<view class="detail_join">
 			<view class="flexRowBetween">
 				<view class="font14">45人正在拼团，可直接参与</view>
-				<view class="font13 color3" @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsDetail_pintuan/goodsDetail_pintuan'}})">查看更多&gt;</view>
+				<view class="font13 color3" @click="Router.navigateTo({route:{path:'/pages/goodsDetail_pintuan/goodsDetail_pintuan'}})">查看更多&gt;</view>
 			</view>
 			<view class="twolist">
 				<view class="item flexRowBetween">
@@ -91,11 +91,11 @@
 				</view>
 			</view>
 			<view class="payBtn flexRowBetween" style="width: 68%;">
-				<view class="item hei" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
+				<view class="item hei" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
 					<view class="price">58.6</view>
 					<view class="name">单独购买</view>
 				</view>
-				<view class="item yellow" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
+				<view class="item yellow" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
 					<view class="price">58.6</view>
 					<view class="name">开团</view>
 				</view>
@@ -117,7 +117,7 @@
 					</view>
 				</view>
 				<view class="submitbtn">
-					<button type="button" style="width: 100%; margin:20rpx 0;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">去拼单</button>
+					<button type="button" style="width: 100%; margin:20rpx 0;" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">去拼单</button>
 				</view>
 			</view>
 		</view>
@@ -144,7 +144,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				show_addok:false

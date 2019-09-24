@@ -66,8 +66,8 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
-				showView: false
+				showView: false,
+				Router:this.$Router
 			}
 		},
 		

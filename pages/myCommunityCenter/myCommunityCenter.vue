@@ -31,7 +31,7 @@
 				</view>
 			</view>
 			<view class="interct_idexLis" v-if="current==2">
-				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="title font14">标题标题标题标题标题标题标题标题</view>
 					<view class="text font13">各位大佬帮我分析一下电脑主机被家里弄的返潮，开不了机是怎么回事?</view>
 					<view class="imgbox">
@@ -74,7 +74,7 @@
 				</view>
 			</view>
 			<view class="interct_idexLis" v-if="current==4">
-				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="title font14">标题标题标题标题标题标题标题标题</view>
 					<view class="text font13">各位大佬帮我分析一下电脑主机被家里弄的返潮，开不了机是怎么回事?</view>
 					<view class="imgbox">
@@ -105,7 +105,7 @@
 				</view>
 			</view>
 			<view class="interct_idexLis" v-if="current==5">
-				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child" v-for="(item,index) in shimgData" :key="index" @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="title font14">标题标题标题标题标题标题标题标题</view>
 					<view class="text font13">各位大佬帮我分析一下电脑主机被家里弄的返潮，开不了机是怎么回事?</view>
 					<view class="imgbox">
@@ -143,7 +143,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score: '',
 				wx_info: {},

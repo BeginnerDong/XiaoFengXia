@@ -8,14 +8,14 @@
 		</view>
 		
 		<view class="" v-if="index==1">
-			<view class="fabubtn" @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_fabu/fengxiangba_fabu'}})">
+			<view class="fabubtn" @click="Router.navigateTo({route:{path:'/pages/fengxiangba_fabu/fengxiangba_fabu'}})">
 				<view class="icon">
 					<image src="../../static/images/beestoenjoy-icon7.png" mode=""></image>
 				</view>
 				<view class="tit">发布帖子</view>
 			</view>
 			<view class="interct_idexLis">
-				<view class="child"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child"  @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="flexRowBetween">
 						<view class="flex">
 							<view class="photo"><image src="../../static/images/beestoenjoy-img1.png" mode=""></image></view>
@@ -56,7 +56,7 @@
 					</view>
 				</view>
 				
-				<view class="child"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child"  @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="flexRowBetween">
 						<view class="flex ">
 							<view class="photo"><image src="../../static/images/beestoenjoy-img1.png" mode=""></image></view>
@@ -95,7 +95,7 @@
 					</view>
 				</view>
 				
-				<view class="child"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
+				<view class="child"  @click="Router.navigateTo({route:{path:'/pages/fengxiangba_pl/fengxiangba_pl'}})">
 					<view class="flexRowBetween">
 						<view class="flex ">
 							<view class="photo"><image src="../../static/images/beestoenjoy-img1.png" mode=""></image></view>
@@ -135,7 +135,7 @@
 		</view>
 		
 		<view class="fx_avtive pdlr4"  v-if="index==2">
-			<view class="item" style="background: #2e2e97;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
+			<view class="item" style="background: #2e2e97;" @click="Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
 				<view class="flexRowBetween">
 					<view class="flex one">
 						<view class="samllIcon"><image src="../../static/images/toobtain-icon2.png" mode=""></image></view>
@@ -150,7 +150,7 @@
 					<view class="title">吴晓波深圳城市圈</view>
 				</view>
 			</view>
-			<view class="item" style="background: #8632b2;"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
+			<view class="item" style="background: #8632b2;"  @click="Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
 				<view class="flexRowBetween">
 					<view class="flex one">
 						<view class="samllIcon"><image src="../../static/images/toobtain-icon2.png" mode=""></image></view>
@@ -165,7 +165,7 @@
 					<view class="title">WorkFace深圳</view>
 				</view>
 			</view>
-			<view class="item" style="background: #23a156;"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
+			<view class="item" style="background: #23a156;"  @click="Router.navigateTo({route:{path:'/pages/activityDetail/activityDetail'}})">
 				<view class="flexRowBetween">
 					<view class="flex one">
 						<view class="samllIcon"><image src="../../static/images/toobtain-icon2.png" mode=""></image></view>
@@ -191,7 +191,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				wx_info:{},
 				index:1

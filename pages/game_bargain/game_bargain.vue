@@ -4,17 +4,17 @@
 		<view class="pdlr4">
 			<view class="ind_proList">
 				<view class="item flexRowBetween"  >
-					<view class="ll" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_bargainDetail/game_bargainDetail'}})">
+					<view class="ll" @click="Router.navigateTo({route:{path:'/pages/game_bargainDetail/game_bargainDetail'}})">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
 					<view class="rr">
-						<view class="avoidOverflow2 title" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_bargainDetail/game_bargainDetail'}})">40枚正宗土鸡蛋农家散养新鲜农村野外放养笨鸡蛋草鸡蛋柴鸡蛋</view>
+						<view class="avoidOverflow2 title" @click="Router.navigateTo({route:{path:'/pages/game_bargainDetail/game_bargainDetail'}})">40枚正宗土鸡蛋农家散养新鲜农村野外放养笨鸡蛋草鸡蛋柴鸡蛋</view>
 						<view class="money flexRowBetween">
 							<view class="flex left">
 								<view class="price">26.8</view>
 								<view class="yuan price">36</view>
 							</view>
-							<view class="addbtn" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_bargainDetailTwo/game_bargainDetailTwo'}})">砍价</view>
+							<view class="addbtn" @click="Router.navigateTo({route:{path:'/pages/game_bargainDetailTwo/game_bargainDetailTwo'}})">砍价</view>
 						</view>
 						
 					</view>
@@ -30,8 +30,8 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
 				showView: false,
+				Router:this.$Router,
 				score:'',
 				wx_info:{},
 				scrollTop: 100,

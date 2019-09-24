@@ -16,7 +16,7 @@
 		<view class="f5H10"></view>
 		<view class="infor-title flexRowBetween" style="padding: 30rpx 4%;background: #fff;">
 			<view class="tt" style="font-size: 28rpx;">积分兑换优惠券</view>
-			<view class="more" @click="webSelf.$Router.navigateTo({route:{path:'/pages/coupon_rule/coupon_rule'}})">兑换规则&gt;</view>
+			<view class="more" @click="Router.navigateTo({route:{path:'/pages/coupon_rule/coupon_rule'}})">兑换规则&gt;</view>
 		</view>
 		
 		<view class="orderNav" style="background: #f5f5f5;">
@@ -85,8 +85,8 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
 				showView: false,
+				Router:this.$Router,
 				score:'',
 				wx_info:{},
 				current:1,

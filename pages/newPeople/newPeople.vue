@@ -2,7 +2,7 @@
 	<view>
 		
 		<view class="newPeopleNav">
-				<view class="item" v-for="(item,index) in newPeopleNav" :key="index"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/newPeople_classify/newPeople_classify'}})">
+				<view class="item" v-for="(item,index) in newPeopleNav" :key="index"  @click="Router.navigateTo({route:{path:'/pages/newPeople_classify/newPeople_classify'}})">
 					<image :src="item.iconUrl" mode=""></image>
 					<view>{{item.name}}</view>
 				</view>
@@ -13,7 +13,7 @@
 		</view>
 		<view class="pdlr4">
 			<view class="ind_proList">
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsOpenDetailTwo/goodsOpenDetailTwo'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index"  @click="Router.navigateTo({route:{path:'/pages/goodsOpenDetailTwo/goodsOpenDetailTwo'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -44,7 +44,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

@@ -3,7 +3,7 @@
 		<view class="myExtendTop">
 			<view class="bigNum">4665</view>
 			<view class="yuan">总积分</view>
-			<view class="txBtn"  @click="webSelf.$Router.navigateTo({route:{path:'/pages/myCashOut/myCashOut'}})">提现</view>
+			<view class="txBtn"  @click="Router.navigateTo({route:{path:'/pages/myCashOut/myCashOut'}})">提现</view>
 		</view>
 		
 		<view class="myRowBetween" >
@@ -23,7 +23,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

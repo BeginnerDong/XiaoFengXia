@@ -22,7 +22,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				show_addok:false,
@@ -37,18 +37,7 @@
 			// self.$Utils.loadAll(['getMainData'], self);
 		},
 		methods: {
-			goPinDan(){
-				const self = this;
-				self.is_show = !self.is_show
-			},
-			showAddok(){
-				const self = this;
-				self.show_addok = !self.show_addok
-			},
-			prev(){
-				const self = this;
-				self.$router.go(-1)
-			},
+			
 			getMainData() {
 				const self = this;
 				console.log('852369')
@@ -63,10 +52,6 @@
 
 <style>
 	@import "../../assets/style/page.css";
-	page{padding-bottom: 140rpx;}
+	page{padding-bottom: 80rpx;}
 	
-	
-	.payBtn .hei .price::before{content: "总计：";}
-	.shareBtn{font-size: 24rpx;padding: 0 20rpx;border-radius:30rpx 0 0 30rpx; line-height:46rpx;background: #eee; color: #666; margin-left: 6rpx;position: absolute; right: 0;top: 20rpx;}
-	.shareBtn image{width: 26rpx; height: 29rpx;display: block;margin-right: 6rpx;}
 </style>

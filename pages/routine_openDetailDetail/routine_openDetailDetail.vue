@@ -53,11 +53,11 @@
 				</view>
 			</view>
 			<view class="payBtn flexRowBetween" style="width: 68%;">
-				<view class="item hei" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
+				<view class="item hei" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
 					<view class="price">58.6</view>
 					<view class="name">单独购买</view>
 				</view>
-				<view class="item yellow" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
+				<view class="item yellow" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
 					<view class="price">58.6</view>
 					<view class="name">开团</view>
 				</view>
@@ -72,7 +72,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false
 			}
 		},

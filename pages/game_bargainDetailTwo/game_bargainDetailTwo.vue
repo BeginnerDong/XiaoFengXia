@@ -23,7 +23,7 @@
 		<view class="detail_join">
 			<view class="flexRowBetween">
 				<view class="font14">好友砍价</view>
-				<view class="font13 color3" @click="webSelf.$Router.navigateTo({route:{path:'/pages/game_bargainDetailTwo_friends/game_bargainDetailTwo_friends'}})">查看更多&gt;</view>
+				<view class="font13 color3" @click="Router.navigateTo({route:{path:'/pages/game_bargainDetailTwo_friends/game_bargainDetailTwo_friends'}})">查看更多&gt;</view>
 			</view>
 			<view class="twolist">
 				<view class="item flexRowBetween">
@@ -117,7 +117,7 @@
 				</view>
 			</view>
 			<view class="payBtn flexRowBetween">
-				<view class="item" style="width: 100%; background: #ddd;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
+				<view class="item" style="width: 100%; background: #ddd;" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})">
 					<view class="color3">已砍价</view>
 				</view>
 			</view>
@@ -143,7 +143,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				is_show:false,
 				show_addok:false

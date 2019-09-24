@@ -7,19 +7,20 @@
 			</view>
 			<view class="banner-box">
 				<view class="banner radius10 oh">
-					<swiper class="swiper-box" indicator-dots="indicatorDots" autoplay="autoplay" interval="interval" duration="duration" indicator-active-color="#434343">
+					<swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-active-color="#434343">
 						<block v-for="(item,index) in labelData" :key="index">
-							<swiper-item class="swiper-item" @click="webSelf.$Router.navigateTo({route:{path:'/pages/simpleDetail/simpleDetail'}})">
+							<swiper-item class="swiper-item" @click="Router.navigateTo({route:{path:'/pages/simpleDetail/simpleDetail'}})">
 								<image :src="item" class="slide-image" />
 							</swiper-item>
 						</block>
 					</swiper>
 				</view>
 			</view>
+			
 		</view>
 		<view class="f5bj pdlr4 inde_fivePic">
 			<view class="flexRowBetween">
-				<view class="item" style="width: 340rpx; height: 240rpx;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/newPeople/newPeople'}})"> 
+				<view class="item" style="width: 340rpx; height: 240rpx;" @click="Router.navigateTo({route:{path:'/pages/newPeople/newPeople'}})"> 
 					<image src="../../static/images/home-img1.png" mode=""></image>
 					<view class="textbox">
 						<view class="tit">新人团</view>
@@ -27,7 +28,7 @@
 						<view class="font12">&gt;&gt;&gt;</view>
 					</view>
 				</view>
-				<view class="item" style="width: 330rpx; height: 240rpx;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myShopApply/myShopApply'}})">
+				<view class="item" style="width: 330rpx; height: 240rpx;" @click="Router.navigateTo({route:{path:'/pages/myShopApply/myShopApply'}})">
 					<image src="../../static/images/home-img2.png" mode=""></image>
 					<view class="textbox">
 						<view class="tit">我的店铺</view>
@@ -37,21 +38,21 @@
 				</view>
 			</view>
 			<view class="flexRowBetween threebox">
-				<view class="item" @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
+				<view class="item" @click="Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
 					<image src="../../static/images/home-img3.png" mode=""></image>
 					<view class="textbox">
 						<view class="tit">中秋尝鲜</view>
 						<view class="tex">吃出好生活</view>
 					</view>
 				</view>
-				<view class="item" @click="webSelf.$Router.navigateTo({route:{path:'/pages/coupon/coupon'}})">
+				<view class="item" @click="Router.navigateTo({route:{path:'/pages/coupon/coupon'}})">
 					<image src="../../static/images/home-img4.png" mode=""></image>
 					<view class="textbox">
 						<view class="tit">优惠券</view>
 						<view class="tex">尽情畅买</view>
 					</view>
 				</view>
-				<view class="item" @click="webSelf.$Router.switchTab({route:{path:'/pages/fengxiangba/fengxiangba'}})">
+				<view class="item" @click="Router.switchTab({route:{path:'/pages/fengxiangba/fengxiangba'}})">
 					<image src="../../static/images/home-img5.png" mode=""></image>
 					<view class="textbox">
 						<view class="tit">活动中心</view>
@@ -65,7 +66,7 @@
 		<view class="f5H10"></view>
 		<view class="infor-title flexRowBetween">
 			<view class="tt">常规团</view>
-			<view class="more" @click="webSelf.$Router.navigateTo({route:{path:'/pages/routine/routine'}})">更多&gt;</view>
+			<view class="more" @click="Router.navigateTo({route:{path:'/pages/routine/routine'}})">更多&gt;</view>
 		</view>
 		<view class="pdlr4">
 			<view style="padding-top: 30rpx;width: 100%; height: 260rpx;">
@@ -73,7 +74,7 @@
 			</view>
 			
 			<view class="ind_proList">
-				<view class="item flexRowBetween" @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsJoinDetail/goodsJoinDetail'}})">
+				<view class="item flexRowBetween" @click="Router.navigateTo({route:{path:'/pages/goodsJoinDetail/goodsJoinDetail'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -93,7 +94,7 @@
 						
 					</view>
 				</view>
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="webSelf.$Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index" @click="Router.navigateTo({route:{path:'/pages/goodsOpenDetail/goodsOpenDetail'}})">
 					<view class="ll">
 						<image src="../../static/images/home-img7.png" mode=""></image>
 					</view>
@@ -124,7 +125,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{},

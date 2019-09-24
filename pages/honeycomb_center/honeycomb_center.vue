@@ -14,28 +14,28 @@
 		
 		<view class="f5H10"></view>
 		<view class="XlineNav">
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_scan/honeycomb_scan'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/honeycomb_scan/honeycomb_scan'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/merchants-icon1.png"></image>
 				</view>
 				<view class="ilblock">扫一扫</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_shopMsg/honeycomb_shopMsg'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/honeycomb_shopMsg/honeycomb_shopMsg'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/merchants-icon2.png"></image>
 				</view>
 				<view class="ilblock">门店管理</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_writeOff/honeycomb_writeOff'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/honeycomb_writeOff/honeycomb_writeOff'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/merchants-icon4.png"></image>
 				</view>
 				<view class="ilblock">核销订单</view>
 				<image class="arrowR" src="../../static/images/home-icon3.png" ></image>
 			</view>
-			<view class="info" @click="webSelf.$Router.navigateTo({route:{path:'/pages/myYongJin/myYongJin'}})">
+			<view class="info" @click="Router.navigateTo({route:{path:'/pages/myYongJin/myYongJin'}})">
 				<view class="ilblock listimg">
 					<image src="../../static/images/merchants-icon3.png"></image>
 				</view>
@@ -51,7 +51,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{}

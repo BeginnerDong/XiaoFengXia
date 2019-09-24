@@ -11,9 +11,9 @@
 				</view>
 			</view>
 			<view class="submitbtn" style="margin-top: 200rpx;">
-				<button class="hei" type="submit" style="width: 100%; margin-bottom: 20rpx;" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_center/honeycomb_center'}})">登录</button>
+				<button class="hei" type="submit" style="width: 100%; margin-bottom: 20rpx;" @click="Router.navigateTo({route:{path:'/pages/honeycomb_center/honeycomb_center'}})">登录</button>
 			</view>
-			<view class="font13 color3" @click="webSelf.$Router.navigateTo({route:{path:'/pages/honeycomb_register/honeycomb_register'}})">没有账号，去注册</view>
+			<view class="font13 color3" @click="Router.navigateTo({route:{path:'/pages/honeycomb_register/honeycomb_register'}})">没有账号，去注册</view>
 		</view>
 		
 	</view>
@@ -23,7 +23,7 @@
 	export default {
 		data() {
 			return {
-				webSelf: this,
+				Router:this.$Router,
 				showView: false,
 				score:'',
 				wx_info:{}
