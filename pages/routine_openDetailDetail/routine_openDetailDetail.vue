@@ -62,6 +62,18 @@
 					<view class="name">开团</view>
 				</view>
 			</view>
+			
+			<!-- 加入店铺弹框 -->
+			<view class="PinDanAlert" v-if="show_addok">
+				<view class="explain center" style="background: none;">
+				
+					<view class="addShpPic">
+						<image src="../../static/images/details-icon2.png" mode=""></image>
+					</view>
+					<view class="colseBtn" @click="showAddok" style="top: auto;bottom: -80rpx;border: 1rpx solid #fff; color: #fff;background: none;">×</view>
+				</view>
+			</view>
+			
 		</view>
 		
 	</view>
@@ -73,7 +85,8 @@
 		data() {
 			return {
 				Router:this.$Router,
-				showView: false
+				showView: false,
+				show_addok:false
 			}
 		},
 		
@@ -85,6 +98,10 @@
 			prev(){
 				const self = this;
 				self.$router.go(-1)
+			},
+			showAddok(){
+				const self = this;
+				self.show_addok = !self.show_addok
 			},
 			getMainData() {
 				const self = this;
