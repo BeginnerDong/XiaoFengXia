@@ -1,22 +1,23 @@
 <template>
 	<view>
-		
+
 		<view class="pdlr4">
 			<view class="ind_proList">
-				<view class="item flexRowBetween" v-for="(item,index) in indProDate" :key="index"  @click="Router.navigateTo({route:{path:'/pages/routine_openDetailDetail/routine_openDetailDetail'}})">
+				<view class="item flexRowBetween" v-for="(item,index) in mainData" :key="index"  
+				@click="Router.navigateTo({route:{path:'/pages/goodsJoinDetail/goodsJoinDetail'}})">
 					<view class="ll">
-						<image src="../../static/images/home-img7.png" mode=""></image>
+						<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''" mode=""></image>
 					</view>
 					<view class="rr">
-						<view class="avoidOverflow2 title">40枚正宗土鸡蛋农家散养新鲜农村野外放养笨鸡蛋草鸡蛋柴鸡蛋</view>
+						<view class="avoidOverflow2 title">{{item.title}}</view>
 						<view class="lable">
-							<view class="tt">5积分</view>
-							<view class="tt">2人团</view>
+							<view class="tt">{{item.score}}积分</view>
+							<view class="tt">{{item.standard}}人团</view>
 						</view>
 						<view class="money flexRowBetween">
 							<view class="flex left">
-								<view class="price">26.8</view>
-								<view class="yuan price">36</view>
+								<view class="price">{{item.price}}</view>
+								<view class="yuan price">{{item.o_price}}</view>
 							</view>
 							<view class="addbtn">开团</view>
 						</view>
@@ -25,51 +26,72 @@
 				</view>
 			</view>
 		</view>
-		
+
 	</view>
-	
+
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				Router:this.$Router,
-				showView: false,
-				score:'',
-				wx_info:{},
-				scrollTop: 100,
-				index: 0,
-				newPeopleNav:[
-					{iconUrl:"../../static/images/icon1.png",name:"鲜果"},
-					{iconUrl:"../../static/images/icon2.png",name:"海鲜"},
-					{iconUrl:"../../static/images/icon3.png",name:"生鲜"},
-					{iconUrl:"../../static/images/icon4.png",name:"零食"},
-					{iconUrl:"../../static/images/icon5.png",name:"坚果"},
-					{iconUrl:"../../static/images/icon6.png",name:"特产"},
-					{iconUrl:"../../static/images/icon7.png",name:"冷鲜"},
-					{iconUrl:"../../static/images/icon8.png",name:"礼盒"}
-				],
-				indProDate:[
-					{},{},{},{},{}
-				]
+				Router: this.$Router,
+				mainData:[],
+				
+				indProDate: [{}, {}, {}, {}, {}]
 			}
 		},
-		
-		onLoad() {
-			const self = this;
-			// self.$Utils.loadAll(['getMainData'], self);
-		},
-		methods: {
-			getMainData() {
-				const self = this;
-				console.log('852369')
-				const postData = {};
-				postData.tokenFuncName = 'getProjectToken';
 
-				self.$apis.orderGet(postData, callback);
+		onLoad(options) {
+			const self = this;
+			self.paginate = self.$Utils.cloneForm(self.$AssetsConfig.paginate);
+			self.category_id = options.id;
+			self.$Utils.loadAll(['getMainData'], self);
+		},
+
+		onReachBottom() {
+			console.log('onReachBottom')
+			const self = this;
+			if (!self.isLoadAll && uni.getStorageSync('loadAllArray')) {
+				self.paginate.currentPage++;
+				self.getMainData()
+			};
+		},
+
+		methods: {
+
+			getMainData(isNew) {
+				const self = this;
+				if (isNew) {
+					self.mainData = [];
+					self.paginate = {
+						count: 0,
+						currentPage: 1,
+						is_page: true,
+						pagesize: 5
+					}
+				};
+				const postData = {};
+				postData.paginate = self.$Utils.cloneForm(self.paginate);
+				postData.searchItem = {
+					thirdapp_id: 2,
+					type: 1,
+					category_id:self.category_id,
+					level: 0
+				};
+				const callback = (res) => {
+					if (res.info.data.length > 0) {
+						self.mainData.push.apply(self.mainData, res.info.data);
+					} else {
+						self.$Utils.showToast('没有更多了', 'none');
+					};
+					console.log('self.mainData', self.mainData)
+					self.$Utils.finishFunc('getMainData');
+				};
+				self.$apis.productGet(postData, callback);
 			},
 		},
+
 	};
 </script>
 
@@ -79,9 +101,28 @@
 	page {
 		padding-bottom: 60rpx;
 	}
-	.ind-cont4{padding-top: 50rpx;}
-	.ind-cont4 .list{ white-space: nowrap;}
-	.ind-cont4 .item{width: 25%;text-align: center;font-size: 26rpx;padding-bottom:50rpx;box-sizing: border-box; display: inline-block;}
-	.ind-cont4 .item image{width: 60rpx;height: 60rpx;display: block;margin: 0 auto 20rpx auto;}
-	
+
+	.ind-cont4 {
+		padding-top: 50rpx;
+	}
+
+	.ind-cont4 .list {
+		white-space: nowrap;
+	}
+
+	.ind-cont4 .item {
+		width: 25%;
+		text-align: center;
+		font-size: 26rpx;
+		padding-bottom: 50rpx;
+		box-sizing: border-box;
+		display: inline-block;
+	}
+
+	.ind-cont4 .item image {
+		width: 60rpx;
+		height: 60rpx;
+		display: block;
+		margin: 0 auto 20rpx auto;
+	}
 </style>

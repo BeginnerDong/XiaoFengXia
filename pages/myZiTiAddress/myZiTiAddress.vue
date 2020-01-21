@@ -2,17 +2,20 @@
 	<view>
 		
 		<view class="myRowBetween" >
-			<view class="item flexRowBetween" v-for="(item,index) in rewardData"  @click="setCurr(index)" :key="index">
+			<view class="item flexRowBetween" v-if="mainData.length>0" v-for="(item,index) in mainData"   :key="index"  @click="choose(index)">
 				<view class="left">
 					<view class="flex">
-						<view>中华世纪智能柜机</view>
-						<view class="font12 color3 iphone">15989566656</view>
+						<view>{{item.shop_name}}</view>
+						<view class="font12 color3 iphone">{{item.phone}}</view>
 					</view>
-					<view class="time">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
+					<view class="time">{{item.address}}</view>
 				</view>
 				<view class="right">
 					<image class="setIcon" :src="curr==index?'../../static/images/address-icon3.png':'../../static/images/address-icon4.png'" mode=""></image>
 				</view>
+			</view>
+			<view v-if="mainData.length==0" style="text-align: center;margin-top: 50px;">
+				<image src="../../static/images/noContent.png" style="width: 300rpx;height: 300rpx;"></image>
 			</view>
 		</view>
 		
@@ -24,40 +27,60 @@
 		data() {
 			return {
 				Router:this.$Router,
-				showView: false,
-				score:'',
-				wx_info:{},
+				mainData:[],
 				rewardData:[
 					{},{},{}
 				],
-				curr:0
+				curr:-1
 			}
 		},
+		
 		onLoad() {
 			const self = this;
-			//self.$Utils.loadAll(['getMainData'], self);
+			self.paginate = self.$Utils.cloneForm(self.$AssetsConfig.paginate);
+			self.$Utils.loadAll(['getMainData'], self);
 		},
+		
+		onReachBottom() {
+			console.log('onReachBottom')
+			const self = this;
+			if (!self.isLoadAll && uni.getStorageSync('loadAllArray')) {
+				self.paginate.currentPage++;
+				self.getMainData()
+			};
+		},
+		
 		methods: {
-			setCurr(index){
+			
+			
+			
+			choose(index){
 				const self = this;
 				self.curr = index
+				uni.setStorageSync('chooseShopData', self.mainData[index]);
+				uni.navigateBack({
+					delta:1
+				})
 			},
+			
 			getMainData() {
 				const self = this;
 				console.log('852369')
 				const postData = {};
 				postData.tokenFuncName = 'getProjectToken';
-
+				postData.searchItem = {
+					user_type:1
+				};
 				const callback = (res) => {
 					if (res.solely_code == 100000 && res.info.data[0]) {
-						self.mainData = res.info.data;
+						self.mainData.push.apply(self.mainData,res.info.data)
 					} else {
 						self.$Utils.showToast(res.msg, 'none')
 					};
 					self.$Utils.finishFunc('getMainData');
 
 				};
-				self.$apis.orderGet(postData, callback);
+				self.$apis.userInfoGet(postData, callback);
 
 			},
 

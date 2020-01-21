@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="ewma">
-			<image src="../../static/images/hexiaoma.png" mode=""></image>
+			<image :src="mainData.qrcode" mode=""></image>
 		</view>
 		
 	</view>
@@ -12,16 +12,37 @@
 	export default {
 		data() {
 			return {
-				Router:this.$Router,
-				showView: false
+				Router: this.$Router,
+				mainData: {}
 			}
 		},
 
+		onLoad(options) {
+			const self = this;
+			self.id = options.id;
+			self.$Utils.loadAll(['getMainData'], self);
+		},
+
 		methods: {
+
 			getMainData() {
 				const self = this;
-				self.$apis.userGet(postData, callback);
-			}
+				console.log('852369')
+				const postData = {};
+				postData.tokenFuncName = 'getProjectToken';
+				postData.searchItem = {
+					id: self.id
+				}
+				const callback = (res) => {
+					if (res.solely_code == 100000 && res.info.data[0]) {
+						self.mainData = res.info.data[0];
+					} else {
+						self.$Utils.showToast(res.msg, 'none')
+					};
+					self.$Utils.finishFunc('getMainData');
+				};
+				self.$apis.orderGet(postData, callback);
+			},
 		}
 	}
 </script>

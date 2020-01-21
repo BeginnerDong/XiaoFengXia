@@ -2,22 +2,22 @@
 	<view>
 		
 		<view class="detailxqBan">
-			<image src="../../static/images/details-img1.png" mode=""></image>
+			<image :src="mainData.bannerImg&&mainData.bannerImg[0]?mainData.bannerImg[0].url:''" mode=""></image>
 		</view>
 		
 		<view class="detail_one">
 			<view class="flex">
-				<view class="price font14">56.5</view>
+				<view class="price font14">{{mainData.price}}</view>
 				<view class="" style="font-size: 24rpx;padding: 0 10rpx;border-radius: 20rpx; line-height: 36rpx;background: #eee; color: #666; margin-left: 6rpx;">积分可抵用</view>
 			</view>
 			<view class="flexRowBetween color2 font13 number">
-				<view class="">库存：2133</view>
-				<view class="">销量：562</view>
+				<view class="">库存：{{mainData.stock?mainData.stock:''}}</view>
+				<view class="">销量：{{mainData.sale_count?mainData.sale_count:''}}</view>
 			</view>
-			<view class="tit font14">梨子新鲜2件带项10斤陕西早酥梨当季梨皇冠香梨应季水果包邮</view>
+			<view class="tit font14">{{mainData.title}}</view>
 		</view>
 		<view class="f5H10"></view>
-		<view class="detal_guige pdlr4 flexRowBetween"  @click="showSel">
+		<!-- <view class="detal_guige pdlr4 flexRowBetween"  @click="showSel">
 			<view class="flexRowAround ll">
 				<view>规格</view>
 				<view class="yyDate-lis flex">
@@ -29,26 +29,14 @@
 			<view class="rr">
 				<image class="arrowR" src="../../static/images/home-icon3.png" mode=""></image>
 			</view>
-		</view>
+		</view> -->
 		<view class="f5H10"></view>
 		<view class="infor-title">
 			<view class="tt">详情介绍</view>
 		</view>
-		<view class="detailTexCont">
+		<view class="detailTexCont" style="padding: 20rpx 0;">
 			<view class="center">
-				<view>详情介绍详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍</view>
-				<view>
-					<image src="../../static/images/details-img2.png" mode="widthFix"></image>
-				</view>
-				<view>详情介绍详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍详情介绍详情介绍详情</view>
-				<view>详情介绍详情介绍详情介绍</view>
-				<view>
-					<image src="../../static/images/details-img3.png" mode="widthFix"></image>
+				<view class="content ql-editor"  style="padding: 12px 0;line-height: 0;"  v-html="mainData.content">
 				</view>
 			</view>
 		</view>
@@ -62,8 +50,9 @@
 				</view>
 			</view>
 			<view class="payBtn flexRowBetween">
-				<view class="item hei" style="width: 100%;" @click="Router.navigateTo({route:{path:'/pages/confirmOrderTwo/confirmOrderTwo'}})">
-					<view class="price">586</view>
+				<view class="item hei" style="width: 100%;" 
+				@click="goBuy">
+					<view class="price">{{mainData.score}}</view>
 					<view class="name">结算</view>
 				</view>
 			</view>
@@ -102,7 +91,8 @@
 					</view>
 				</view>
 				<view class="submitbtn" style="margin-top: 60rpx;">
-					<button class="hei" style="margin-bottom: 0;" type="submit" @click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})" >确定</button>
+					<button class="hei" style="margin-bottom: 0;" type="submit" 
+					@click="Router.navigateTo({route:{path:'/pages/confirmOrder/confirmOrder'}})" >确定</button>
 				</view>
 			</view>
 		</view>
@@ -115,43 +105,64 @@
 	export default {
 		data() {
 			return {
-				Router:this.$Router,
-				showView: false,
-				is_show:false,
-				show_addok:false,
-				selCurrent:0,
-				seltSpecsList:['10斤装','10斤装','10斤装','10斤装','10斤装']
+				Router: this.$Router,
+				mainData: {}
 			}
 		},
-		
-		onLoad() {
+
+		onLoad(options) {
 			const self = this;
-			// self.$Utils.loadAll(['getMainData'], self);
+			self.id = options.id;
+			self.paginate = self.$Utils.cloneForm(self.$AssetsConfig.paginate);
+			self.$Utils.loadAll(['getMainData'], self);
 		},
+
 		methods: {
-			showSel(){
-				const self = this;
-				self.is_show = !self.is_show;
-			},
-			prev(){
-				const self = this;
-				self.$router.go(-1)
-			},
-			// 商品属性
-			seltSpecs(index){
-				const self = this;
-				self .selCurrent=index
-			},
+
 			getMainData() {
 				const self = this;
 				console.log('852369')
 				const postData = {};
-				postData.tokenFuncName = 'getProjectToken';
+				postData.searchItem = {
+					id: self.id
+				}
+				const callback = (res) => {
+					if (res.solely_code == 100000 && res.info.data[0]) {
+						self.mainData = res.info.data[0];
 
-				self.$apis.orderGet(postData, callback);
+						const regex = new RegExp('<img', 'gi');
+						self.mainData.content = self.mainData.content.replace(regex, `<img style="max-width: 100%;"`);
+					} else {
+						self.$Utils.showToast(res.msg, 'none')
+					};
+					self.$Utils.finishFunc('getMainData');
+				};
+				self.$apis.productGet(postData, callback);
 			},
-		},
-	};
+			
+			goBuy() {
+				const self = this;
+				if (JSON.stringify(self.mainData) == '{}') {
+					api.showToast('商品错误', 'none', 1000);
+					return;
+				};
+				var orderList = {
+					product: [{
+						id: self.mainData.id,
+						count: 1,
+						product: self.mainData
+					}],
+					type:self.mainData.type,
+				};
+				uni.setStorageSync('payPro', orderList);
+				self.$Router.navigateTo({
+					route: {
+						path: '/pages/confirmOrderTwo/confirmOrderTwo'
+					}
+				})
+			},
+		}
+	}
 </script>
 
 <style>

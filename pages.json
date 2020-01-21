@@ -4,14 +4,16 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "小蜂侠",//设置页面标题文字
-				"onReachBottomDistance":100
+				"onReachBottomDistance":100,
+				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/fengxiangba/fengxiangba",
 			"style": {
 				"navigationBarTitleText": "蜂享吧",//设置页面标题文字
-				"onReachBottomDistance":100
+				"onReachBottomDistance":100,
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -25,14 +27,16 @@
 			"path": "pages/jifenShop/jifenShop",
 			"style": {
 				"navigationBarTitleText": "积分商城",//设置页面标题文字
-				"onReachBottomDistance":100
+				"onReachBottomDistance":100,
+				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/user/user",
 			"style": {
 				"navigationBarTitleText": "我的",//设置页面标题文字
-				"onReachBottomDistance":100
+				"onReachBottomDistance":100,
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -63,17 +67,11 @@
 				"onReachBottomDistance":100
 			}
 		},
-		{
-			"path": "pages/goodsOpenDetail/goodsOpenDetail",
-			"style": {
-				"navigationBarTitleText": "商品详情",
-				"onReachBottomDistance":100
-			}
-		},
+	
 		{
 			"path": "pages/goodsOpenDetailTwo/goodsOpenDetailTwo",
 			"style": {
-				"navigationBarTitleText": "商品详情",
+				"navigationBarTitleText": "城市切换",
 				"onReachBottomDistance":100
 			}
 		},
@@ -119,13 +117,7 @@
 				"onReachBottomDistance":100
 			}
 		},
-		{
-			"path": "pages/routine_openDetailDetail/routine_openDetailDetail",
-			"style": {
-				"navigationBarTitleText": "商品详情",
-				"onReachBottomDistance":100
-			}
-		},
+	
 		{
 			"path": "pages/myShopApply/myShopApply",
 			"style": {
@@ -158,8 +150,7 @@
 			"path": "pages/myShopPoster/myShopPoster",
 			"style": {
 				"navigationBarTitleText": "海报",
-				"onReachBottomDistance":100,
-				"navigationStyle":"custom"
+				"onReachBottomDistance":100
 			}
 		},
 		{
@@ -253,13 +244,7 @@
 				"onReachBottomDistance":100
 			}
 		},
-		{
-			"path": "pages/game_bargainDetailTwo_friends/game_bargainDetailTwo_friends",
-			"style": {
-				"navigationBarTitleText": "好友砍价",
-				"onReachBottomDistance":100
-			}
-		},
+	
 		{
 			"path": "pages/game_turntable/game_turntable",
 			"style": {
@@ -288,6 +273,7 @@
 				"onReachBottomDistance":100
 			}
 		},
+		
 		{
 			"path": "pages/myOrder/myOrder",
 			"style": {
@@ -366,13 +352,6 @@
 			}
 		},
 		{
-			"path": "pages/honeycomb_scan/honeycomb_scan",
-			"style": {
-				"navigationBarTitleText": "扫一扫",
-				"onReachBottomDistance":100
-			}
-		},
-		{
 			"path": "pages/honeycomb_shopMsg/honeycomb_shopMsg",
 			"style": {
 				"navigationBarTitleText": "门店信息",
@@ -413,7 +392,8 @@
 	"tabBar":{
 		"color":"#999",
 		"selectedColor":"#222",
-		"backgroundColor": "#ffffff",
+		"backgroundColor": "#f5f5f5",
+		"borderStyle":"white",
 		"list": [
 			{
 			   "pagePath": "pages/index/index",

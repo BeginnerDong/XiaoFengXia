@@ -266,14 +266,14 @@ class Token {
     }
     
     getMerchantToken(callback,postData) { 
-        if((postData&&postData.refreshToken)||!uni.getStorageSync('merchant_token')){
-            uni.removeStorageSync('merchant_token');
-            uni.removeStorageSync('merchant_info');
+        if((postData&&postData.refreshToken)||!uni.getStorageSync('merchantToken')){
+            uni.removeStorageSync('merchantToken');
+            uni.removeStorageSync('merchantInfo');
             uni.redirectTo({
-              url: '/pages/login/login'
+              url: '/pages/honeycomb_login/honeycomb_login'
             });
         }else{
-            return uni.getStorageSync('merchant_token');
+            return uni.getStorageSync('merchantToken');
         }
     }
    
